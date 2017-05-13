@@ -1,0 +1,20 @@
+{
+    "name": "com.ihanux.coke",
+    "version": "0.0.1",
+    "displayName": "Red Moments",
+    "cordova": {
+        "platforms": [
+            "android",
+            "ios"
+        ],
+        "plugins": {
+            "cordova-plugin-crop": {},
+            "cordova-plugin-whitelist": {}
+        }
+    },
+    "dependencies": {
+        "cordova-ios": "~4.4.0",
+        "cordova-plugin-crop": "~0.1.0",
+        "cordova-plugin-whitelist": "1"
+    }
+}

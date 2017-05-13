@@ -1,0 +1,50 @@
+body {
+	min-width: 320px;
+}
+
+.cropit-preview-background {
+	opacity: .2;
+}
+
+input.cropit-image-zoom-input {
+	position: relative;
+}
+
+#image-cropper {
+	overflow: hidden;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.cropit-preview {
+	background-color: #f8f8f8;
+	background-size: cover;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-top: 7px;
+	width: 280px;
+	height: 142px;
+	margin: 0 auto;
+}
+
+.cropit-preview-image-container {
+	cursor: move;
+}
+
+.cropit-image-input {
+	position: absolute;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index: 1;
+}
+
+#imageCanvas {
+	max-width: 100%;
+}
+
+.item.no-padding-top {
+	padding-top: 0;
+}

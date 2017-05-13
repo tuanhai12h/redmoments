@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Red Moments</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+
+	<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="msapplication-tap-highlight" content="no">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+	<link rel="stylesheet" href="css/ionic.css" >	
+	<link rel="stylesheet" href="css/coke.css">
+</head>
+<body>
+    <div class="pane">
+		<div class="bar bar-header bar-assertive">
+		  	<h1 class="title">Red Moments</h1>
+		</div>
+
+		<div class="view">
+			<div class="scroll-content">
+				<div class="content overflow-scroll has-header">
+
+					<div id="image-editor" class="image-editor">
+						<div class="item text-center">
+							<div class="button button-calm icon-left ion-images">
+								<input type="file" class="cropit-image-input" capture >
+								Select Gallery
+							</div>
+							<button id="takePhoto" class="button button-calm icon-left ion-camera">Take Photo</button>
+						</div>
+
+						<div class="item" id="image-cropper">
+							<div class="cropit-preview"></div>
+						</div>
+
+						<div class="item range">
+							<input class="cropit-image-zoom-input" type="range">
+						</div>
+						
+						<div class="item no-padding-top text-center">
+							<button id="export" class="button button-balanced button-block">
+								<i class="icon ion-checkmark"></i>
+								Done
+							</button>		
+						</div>
+					</div>					
+
+					<div class="image-coke" style="display: none;">
+						<div class="item text-center image-successful">
+							<canvas id="imageCanvas"></canvas>
+						</div>
+
+						<div class="item no-padding-top text-center">
+							<button id="save" class="button button-balanced icon-left ion-archive">Save image</button>
+							<button id="postFacebook" class="button button-positive icon-left ion-social-facebook">Post Facebook</button>
+						</div>
+						<!-- <button class="Reset">Reset</button> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="cordova.js"></script>
+	
+	<script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+	<script type="text/javascript" src="js/ionic.bundle.js"></script>
+	<script type="text/javascript" src="js/jquery.cropit.js"></script>
+	<script type="text/javascript" src="js/coke.js"></script>
+</body>
+</html>

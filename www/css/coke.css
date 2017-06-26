@@ -2,6 +2,11 @@ body {
 	min-width: 320px;
 }
 
+#image-editor {
+	max-width: 400px;
+    margin: 0 auto;
+}
+
 .cropit-preview-background {
 	opacity: .2;
 }

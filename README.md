@@ -1,3 +1,3 @@
 # redmoments
 
-A simple application build base on Red Moments.
+A simple application build base on Cordova Apps.

@@ -3,3 +3,5 @@
 /platforms
 /plugins/*
 !/plugins/*.json
+
+package-lock.json

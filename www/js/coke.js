@@ -140,26 +140,41 @@ var canvasImage = function(dataURL, callback)
 var onDeviceReady = function()
 {
 	// update permission when save
-	var permissions = window.plugins.permissions;
-	permissions.hasPermission(checkPermissionCallback, null, permissions.WRITE_EXTERNAL_STORAGE);
-
-	$('#takePhoto').click(function()
-	{
-		navigator.camera.getPicture(
-			function(imageData)
-			{
-				$('#image-editor').cropit('imageSrc', imageData);
-			}, 
-			function(error)
-			{
-				console.log('Failed because: ' + error);
-			},
-			{ 
-				quality: 80,
-				correctOrientation: true			
+	var Permission = window.plugins.Permission;
+	var permission = 'android.permission.WRITE_EXTERNAL_STORAGE';
+	
+	Permission.has(permission, 
+		function(results) {
+			if (!results[permission]) {
+				Permission.request(permission, function(results) {
+					if (result[permission]) {
+						// permission is granted
+						console.log('permission is granted');
+					}
+				});
 			}
-		);
-	});
+		}, function(error) {
+			console.log(error);
+		});
+
+	// disabled on July 12, 2019
+	// $('#takePhoto').click(function()
+	// {
+	// 	navigator.camera.getPicture(
+	// 		function(imageData)
+	// 		{
+	// 			$('#image-editor').cropit('imageSrc', imageData);
+	// 		}, 
+	// 		function(error)
+	// 		{
+	// 			console.log('Failed because: ' + error);
+	// 		},
+	// 		{ 
+	// 			quality: 80,
+	// 			correctOrientation: true			
+	// 		}
+	// 	);
+	// });
 
 	$('#save').click(function()
 	{
@@ -176,23 +191,24 @@ var onDeviceReady = function()
 		);
 	});
 
-	$('#postFacebook').click(function()
-	{
-		var base64String = document.getElementById('imageCanvas').toDataURL('image/jpg');
-		plugins.socialsharing.shareViaFacebook(
-			'Message via Facebook', 
-			base64String, 
-			null, 
-			function(response) 
-			{
-				console.log('share ok');
-			}, 
-			function(error)
-			{
-				console.log(error);
-			}
-		);
-	});
+	// disabled on July 12, 2019
+	// $('#postFacebook').click(function()
+	// {
+	// 	var base64String = document.getElementById('imageCanvas').toDataURL('image/jpg');
+	// 	plugins.socialsharing.shareViaFacebook(
+	// 		'Message via Facebook', 
+	// 		base64String, 
+	// 		null, 
+	// 		function(response) 
+	// 		{
+	// 			console.log('share ok');
+	// 		}, 
+	// 		function(error)
+	// 		{
+	// 			console.log(error);
+	// 		}
+	// 	);
+	// });
 
 	function checkPermissionCallback(status) 
 	{

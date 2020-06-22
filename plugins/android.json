@@ -13,20 +13,16 @@
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.ihanux.coke"
     },
-    "cordova-plugin-x-socialsharing": {
-      "ANDROID_SUPPORT_V4_VERSION": "24.1.1+",
-      "PACKAGE_NAME": "com.ihanux.coke"
-    },
     "cordova-plugin-permission": {
       "PACKAGE_NAME": "com.ihanux.coke"
     },
     "cordova-save-image-gallery": {
       "PACKAGE_NAME": "com.ihanux.coke"
-    }
-  },
-  "dependent_plugins": {
-    "es6-promise-plugin": {
+    },
+    "cordova-plugin-camera": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
       "PACKAGE_NAME": "com.ihanux.coke"
     }
-  }
+  },
+  "dependent_plugins": {}
 }

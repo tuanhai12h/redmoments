@@ -15,16 +15,6 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-x-socialsharing": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-x-socialsharing@^5.4.7"
-    },
-    "is_top_level": true,
-    "variables": {
-      "ANDROID_SUPPORT_V4_VERSION": "24.1.1+"
-    }
-  },
   "es6-promise-plugin": {
     "source": {
       "type": "registry",
@@ -45,6 +35,14 @@
     "source": {
       "type": "registry",
       "id": "cordova-save-image-gallery@0.0.26"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-camera": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-camera@4.1.0"
     },
     "is_top_level": true,
     "variables": {}

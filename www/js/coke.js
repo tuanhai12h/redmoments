@@ -157,26 +157,25 @@ var onDeviceReady = function()
 			console.log(error);
 		});
 
-	// disabled on July 12, 2019
-	// $('#takePhoto').click(function()
-	// {
-	// 	navigator.camera.getPicture(
-	// 		function(imageData)
-	// 		{
-	// 			$('#image-editor').cropit('imageSrc', imageData);
-	// 		}, 
-	// 		function(error)
-	// 		{
-	// 			console.log('Failed because: ' + error);
-	// 		},
-	// 		{ 
-	// 			quality: 80,
-	// 			correctOrientation: true			
-	// 		}
-	// 	);
-	// });
+	$('#takePhoto').click(function()
+	{
+		navigator.camera.getPicture(
+			function(imageData)
+			{
+				$('#image-editor').cropit('imageSrc', imageData);
+			}, 
+			function(error)
+			{
+				console.log('Failed because: ' + error);
+			},
+			{ 
+				quality: 80,
+				correctOrientation: true			
+			}
+		);
+	});
 
-	$('#save').click(function()
+	$('#saveImage').click(function()
 	{
 		var base64String = document.getElementById('imageCanvas').toDataURL('image/jpg');
 		var params = {data: base64String, prefix: 'red_', format: 'JPG', quality: 80, mediaScanner: true};
@@ -190,44 +189,4 @@ var onDeviceReady = function()
 			}
 		);
 	});
-
-	// disabled on July 12, 2019
-	// $('#postFacebook').click(function()
-	// {
-	// 	var base64String = document.getElementById('imageCanvas').toDataURL('image/jpg');
-	// 	plugins.socialsharing.shareViaFacebook(
-	// 		'Message via Facebook', 
-	// 		base64String, 
-	// 		null, 
-	// 		function(response) 
-	// 		{
-	// 			console.log('share ok');
-	// 		}, 
-	// 		function(error)
-	// 		{
-	// 			console.log(error);
-	// 		}
-	// 	);
-	// });
-
-	function checkPermissionCallback(status) 
-	{
-		if(!status.hasPermission) 
-		{
-			var errorCallback = function() 
-			{
-				alert('Storage permission is not turned on');
-			};
-
-			permissions.requestPermission(function(status) 
-				{
-					if (!status.hasPermission) {
-						errorCallback();
-					}
-				}, 
-				errorCallback, 
-				permissions.WRITE_EXTERNAL_STORAGE
-			);
-		}
-	}
 };
